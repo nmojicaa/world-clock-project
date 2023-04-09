@@ -3,13 +3,13 @@ function updateTime() {
   let losAngelesElement = document.querySelector("#los-angeles");
   if (losAngelesElement) {
     let losAngelesDateElement = losAngelesElement.querySelector(".date");
-    let losAngelesTimeElement = losAngelesElement.querySelector(".time");
+    let lostAngelesTimeElement = losAngelesElement.querySelector(".time");
     let losAngelesTime = moment().tz("America/Los_Angeles");
 
-    losAngelesDateElement.innerHTML = moment().format("MMMM Do YYYY");
-    losAngelesTimeElement.innerHTML = `${losAngelesTime.format(
-      "h:mm:ss"
-    )}  <small>${losAngelesTime.format("A")}</small>`;
+    losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM	Do YYYY");
+    lostAngelesTimeElement.innerHTML = losAngelesTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
   }
 
   // Paris
@@ -19,24 +19,24 @@ function updateTime() {
     let parisTimeElement = parisElement.querySelector(".time");
     let parisTime = moment().tz("Europe/Paris");
 
-    parisDateElement.innerHTML = moment().format("MMMM Do YYYY");
-    parisTimeElement.innerHTML = `${parisTime.format(
-      "h:mm:ss"
-    )}  <small>${parisTime.format("A")}</small>`;
+    parisDateElement.innerHTML = parisTime.format("MMMM	Do YYYY");
+    parisTimeElement.innerHTML = parisTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
   }
+}
 
-  // Sydney
-  let sydneyElement = document.querySelector("#sydney");
-  if (sydneyElement) {
-    let sydneyDateElement = sydneyElement.querySelector(".date");
-    let sydneyTimeElement = sydneyElement.querySelector(".time");
-    let sydneyTime = moment().tz("Australia/Sydney");
+// Sydney
+let sydneyElement = document.querySelector("#sydney");
+if (sydneyElement) {
+  let sydneyDateElement = sydneyElement.querySelector(".date");
+  let sydneyTimeElement = sydneyElement.querySelector(".time");
+  let sydneyTime = moment().tz("Australia/Sydney");
 
-    sydneyDateElement.innerHTML = moment().format("MMMM Do YYYY");
-    sydneyTimeElement.innerHTML = `${sydneyTime.format(
-      "h:mm:ss"
-    )}  <small>${sydneyTime.format("A")}</small>`;
-  }
+  sydneyDateElement.innerHTML = moment().format("MMMM Do YYYY");
+  sydneyTimeElement.innerHTML = sydneyTime.format(
+    "h:mm:ss [<small>]A[</small>]"
+  );
 }
 
 function updateCity(event) {
