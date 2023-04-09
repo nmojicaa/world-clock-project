@@ -71,3 +71,8 @@ a {
   text-decoration: none;
   color: #b9cced;
 }
+
+a:hover {
+  text-decoration: underline;
+  color: #b9cced;
+}
